@@ -51,6 +51,26 @@ void Engine::Input()
 			break;
 		}
 	}
+
+	// keyBoardInput
+	if (Keyboard::isKeyPressed(Keyboard::Escape)) // esc버튼 입력시 윈도우 창 닫힘
+	{
+		window->close();
+	}
+
+	// Mouse Input
+	if (Mouse::isButtonPressed(Mouse::Left))
+	{
+		window->setTitle("Left Click");
+	}
+	else if (Mouse::isButtonPressed(Mouse::Right))
+	{
+		window->setTitle("Right Click");
+	}
+	else
+	{
+		window->setTitle("Adventure Time with Finn and Jake");
+	}
 }
 
 void Engine::Update()
