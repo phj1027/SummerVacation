@@ -14,10 +14,15 @@ Engine::~Engine()
 void Engine::Init()
 {
 	// 현재 window 변수는 포인터로 존재함
-
-	this->window = new RenderWindow(VideoMode(500, 500), "Window");
+	this->window = new RenderWindow(VideoMode(500, 500), "Adventure Time with Finn and Jake");
 	// this는 현재 작성하고있는 Engine을 의미함 == Engine의 window
 
+	Image icon;
+	icon.loadFromFile("Textures/1.jpg");
+	window->setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
+
+	// 여러 set기능들 살펴보기
+	window->setMouseCursorVisible(true); //(false로 하면 마우스 커서 안보임)
 }
 
 void Engine::Destroy()
