@@ -24,8 +24,11 @@ void Engine::Init()
 	icon.loadFromFile("Textures/1.jpg");
 	window->setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
 
-	obj = new AnimationObject; // -> AnimationObject생성 -> AnimationObject.cpp에서 생성자에서 Init실행 -> 애니메이션 나옴
-
+	// 오브젝트를 벡터 단위로 관리 
+	AnimationObject* obj1 = new AnimationObject; // 애니메이션 오브젝트 한개 더 추가
+	obj.push_back(new AnimationObject);
+	obj1->setPosition(100.f, 250.f);
+	obj.push_back(obj1);
 }
 
 void Engine::Destroy()
@@ -97,12 +100,13 @@ void Engine::Input()
 
 void Engine::Update()
 {
-
-
 	// 시간도 update해야함
 	deltaTime = timer.getElapsedTime().asSeconds();
 
-	obj->Update(deltaTime);
+	for (auto& o : obj)
+	{
+		o->Update(deltaTime);
+	}
 
 	timer.restart();
 
@@ -117,7 +121,11 @@ void Engine::Render()
 	{
 		window->clear();
 		Update();
-		window->draw(*obj);
+		for (auto& o : obj)
+		{
+			window->draw(*o);
+		}
+
 		window->display();
 	}
 }
