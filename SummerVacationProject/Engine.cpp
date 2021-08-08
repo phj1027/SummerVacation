@@ -1,5 +1,6 @@
 #include "framework.h"
 #include "Engine.h"
+#include "AnimationObject.h"
 
 Engine::Engine()
 {
@@ -14,15 +15,17 @@ Engine::~Engine()
 void Engine::Init()
 {
 	// 현재 window 변수는 포인터로 존재함
+
 	this->window = new RenderWindow(VideoMode(500, 500), "Adventure Time with Finn and Jake");
 	// this는 현재 작성하고있는 Engine을 의미함 == Engine의 window
 
+	// 윈도우창 아이콘 꾸미기
 	Image icon;
 	icon.loadFromFile("Textures/1.jpg");
 	window->setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
 
-	// 여러 set기능들 살펴보기
-	window->setMouseCursorVisible(true); //(false로 하면 마우스 커서 안보임)
+	obj = new AnimationObject; // -> AnimationObject생성 -> AnimationObject.cpp에서 생성자에서 Init실행 -> 애니메이션 나옴
+
 }
 
 void Engine::Destroy()
@@ -76,6 +79,7 @@ void Engine::Input()
 	//	cout << "Pressed A key!!\n"; //1초에 몇십프레임씩 움직이기때문에 한번만 입력해도 여러번 출력됨
 	//}
 
+
 	// Mouse Input
 	if (Mouse::isButtonPressed(Mouse::Left))
 	{
@@ -94,8 +98,13 @@ void Engine::Input()
 void Engine::Update()
 {
 
+
 	// 시간도 update해야함
 	deltaTime = timer.getElapsedTime().asSeconds();
+
+	obj->Update(deltaTime);
+
+	timer.restart();
 
 	// input은 매프레임 실행되기때문에 update의 일부분
 	Input();
@@ -108,6 +117,7 @@ void Engine::Render()
 	{
 		window->clear();
 		Update();
+		window->draw(*obj);
 		window->display();
 	}
 }

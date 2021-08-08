@@ -13,24 +13,60 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="소스 파일\00. Engine">
+    <Filter Include="소스 파일\01. Engine">
       <UniqueIdentifier>{4a8dd6da-642d-47aa-8390-8dc47633de3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\00. Main">
+      <UniqueIdentifier>{ccb9f919-f745-46d1-b0d4-996d1939c3d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02. Scene">
+      <UniqueIdentifier>{87448b19-0365-49ab-8b3f-d1578c3df467}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03. Object">
+      <UniqueIdentifier>{bd6573ff-ee22-41dd-8ebe-0335158b23ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\97. System">
+      <UniqueIdentifier>{51f90053-81f8-49c0-919a-f9f5665530b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\99. Common">
+      <UniqueIdentifier>{124f903e-32e4-4149-b93c-549bc9575214}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03. Object\00. Object">
+      <UniqueIdentifier>{4896d7eb-c5f0-4abc-9944-1518ba9b02c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03. Object\01. AnimationObject">
+      <UniqueIdentifier>{e4eb492b-6331-47a0-988d-3972fce539ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03. Object\01. AnimationObject\00. AnimationObject">
+      <UniqueIdentifier>{429ffd32-9876-41e3-9bc8-b4b1d979efc0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Engine.cpp">
-      <Filter>소스 파일\00. Engine</Filter>
+      <Filter>소스 파일\01. Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>소스 파일\00. Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>소스 파일\03. Object\00. Object</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationObject.cpp">
+      <Filter>소스 파일\03. Object\01. AnimationObject\00. AnimationObject</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="framework.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Engine.h">
-      <Filter>소스 파일\00. Engine</Filter>
+      <Filter>소스 파일\01. Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>소스 파일\99. Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>소스 파일\03. Object\00. Object</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationObject.h">
+      <Filter>소스 파일\03. Object\01. AnimationObject\00. AnimationObject</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
