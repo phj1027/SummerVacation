@@ -40,6 +40,30 @@
     <Filter Include="소스 파일\03. Object\01. AnimationObject\00. AnimationObject">
       <UniqueIdentifier>{429ffd32-9876-41e3-9bc8-b4b1d979efc0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\02. Scene\00. Scene">
+      <UniqueIdentifier>{00aae40a-d27a-4ad9-a52c-58fca814fe05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03. Object\01. AnimationObject\01. Character">
+      <UniqueIdentifier>{ace1adb5-7c6b-47de-8fb5-4e0dc4b6dd24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03. Object\01. AnimationObject\02. Enemies">
+      <UniqueIdentifier>{0aef05cb-a9af-47db-b6c6-ffaf7f93e3af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03. Object\01. AnimationObject\02. Enemies\00. Enemies">
+      <UniqueIdentifier>{e919994d-fc31-4e72-b756-03ec551f7e18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03. Object\01. AnimationObject\02. Enemies\01. ChainsawBear">
+      <UniqueIdentifier>{70c1999c-8a56-44e3-ab86-347fea19afd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03. Object\01. AnimationObject\02. Enemies\02. Donny">
+      <UniqueIdentifier>{a80d6f6f-ee55-4cf7-9d60-2bbe86199038}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03. Object\01. AnimationObject\02. Enemies\03. HypnoWormking">
+      <UniqueIdentifier>{91b1cf95-a888-47a7-8e5b-cfccd9e81cd7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03. Object\01. AnimationObject\02. Enemies\04. BigZombie">
+      <UniqueIdentifier>{f144e13c-3b64-4929-aaff-c73633fe2da4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine.cpp">
@@ -54,6 +78,18 @@
     <ClCompile Include="AnimationObject.cpp">
       <Filter>소스 파일\03. Object\01. AnimationObject\00. AnimationObject</Filter>
     </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>소스 파일\02. Scene\00. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>소스 파일\03. Object\01. AnimationObject\01. Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemies.cpp">
+      <Filter>소스 파일\03. Object\01. AnimationObject\02. Enemies\00. Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="BigZombie.cpp">
+      <Filter>소스 파일\03. Object\01. AnimationObject\02. Enemies\04. BigZombie</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine.h">
@@ -67,6 +103,18 @@
     </ClInclude>
     <ClInclude Include="AnimationObject.h">
       <Filter>소스 파일\03. Object\01. AnimationObject\00. AnimationObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>소스 파일\02. Scene\00. Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>소스 파일\03. Object\01. AnimationObject\01. Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemies.h">
+      <Filter>소스 파일\03. Object\01. AnimationObject\02. Enemies\00. Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="BigZombie.h">
+      <Filter>소스 파일\03. Object\01. AnimationObject\02. Enemies\04. BigZombie</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

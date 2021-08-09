@@ -1,6 +1,7 @@
 #include "framework.h"
 #include "Engine.h"
-#include "AnimationObject.h"
+#include "Character.h"
+#include "BigZombie.h"
 
 Engine::Engine()
 {
@@ -15,9 +16,10 @@ Engine::~Engine()
 void Engine::Init()
 {
 	// 현재 window 변수는 포인터로 존재함
-
 	this->window = new RenderWindow(VideoMode(500, 500), "Adventure Time with Finn and Jake");
 	// this는 현재 작성하고있는 Engine을 의미함 == Engine의 window
+
+	window->setMouseCursorVisible(true); // 마우스 커서 보이게 설정
 
 	// 윈도우창 아이콘 꾸미기
 	Image icon;
@@ -25,10 +27,8 @@ void Engine::Init()
 	window->setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
 
 	// 오브젝트를 벡터 단위로 관리 
-	AnimationObject* obj1 = new AnimationObject; // 애니메이션 오브젝트 한개 더 추가
-	obj.push_back(new AnimationObject);
-	obj1->setPosition(100.f, 250.f);
-	obj.push_back(obj1);
+	obj.push_back(new Character);
+	obj.push_back(new BigZombie);
 }
 
 void Engine::Destroy()
