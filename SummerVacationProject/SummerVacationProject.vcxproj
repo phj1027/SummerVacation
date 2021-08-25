@@ -147,6 +147,8 @@
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="Enemies.cpp" />
     <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="GameScene.cpp" />
+    <ClCompile Include="GameScene2.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Scene.cpp" />
@@ -158,6 +160,8 @@
     <ClInclude Include="Enemies.h" />
     <ClInclude Include="Engine.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="GameScene.h" />
+    <ClInclude Include="GameScene2.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Scene.h" />
   </ItemGroup>

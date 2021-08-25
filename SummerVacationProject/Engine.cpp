@@ -1,6 +1,7 @@
 #include "framework.h"
 #include "Engine.h"
-#include "Scene.h"
+#include "GameScene.h"
+#include "GameScene2.h"
 
 Engine::Engine()
 {
@@ -25,7 +26,9 @@ void Engine::Init()
 	icon.loadFromFile("Textures/1.jpg");
 	window->setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
 
-	this->scene = new Scene;
+	this->scenes.push(new Scene); // 아무것도 없는 장면 
+	
+	
 }
 
 void Engine::Destroy()
@@ -57,7 +60,17 @@ void Engine::Input()
 			{
 			case Keyboard::A: // A 입력받았다면
 			{
-				cout << "Pressed A key!!\n";
+				this->scenes.push(new GameScene2);
+				break;
+			}
+			case Keyboard::S:
+			{
+				this->scenes.push(new GameScene);
+				break;
+			}
+			case Keyboard::Q:
+			{
+				scenes.top()->EndScene();
 				break;
 			}
 			default:
@@ -105,7 +118,21 @@ void Engine::Update()
 	// input은 매프레임 실행되기때문에 update의 일부분
 	Input();
 
-	this->scene->Update(deltaTime);
+	if (!scenes.empty())
+	{
+		scenes.top()->Update(deltaTime);
+		if (this-> scenes.top()->GetQuit())
+		{
+			//현재 실행중인 scene을 종료 
+			delete this->scenes.top();
+			this->scenes.pop();
+			cout << "Pop Scene\n";
+		}
+	}
+	else
+	{
+		window->close(); //scene이 없으면 게임 끄기
+	}
 }
 
 void Engine::Render()
@@ -116,7 +143,12 @@ void Engine::Render()
 		window->clear();
 		Update();
 		
-		scene->Render(window);
+		if (!scenes.empty())
+		{
+			scenes.top()->Render(window);
+		}
+	
+
 
 		window->display();
 	}

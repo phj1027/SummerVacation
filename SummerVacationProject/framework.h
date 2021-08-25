@@ -11,6 +11,7 @@ using namespace sf;
 #include <iostream>
 #include <vector>
 #include <map>
+#include <stack>
 
 using namespace std;
 

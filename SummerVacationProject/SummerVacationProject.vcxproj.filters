@@ -64,6 +64,12 @@
     <Filter Include="소스 파일\03. Object\01. AnimationObject\02. Enemies\04. BigZombie">
       <UniqueIdentifier>{f144e13c-3b64-4929-aaff-c73633fe2da4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\02. Scene\01. GameScene">
+      <UniqueIdentifier>{3374dae5-d5b2-441b-b47d-d0bd6cae18e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02. Scene\02. GameScene2">
+      <UniqueIdentifier>{fb6f613a-2723-4add-9b28-8c7aadddf523}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine.cpp">
@@ -90,6 +96,12 @@
     <ClCompile Include="BigZombie.cpp">
       <Filter>소스 파일\03. Object\01. AnimationObject\02. Enemies\04. BigZombie</Filter>
     </ClCompile>
+    <ClCompile Include="GameScene.cpp">
+      <Filter>소스 파일\02. Scene\01. GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene2.cpp">
+      <Filter>소스 파일\02. Scene\02. GameScene2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine.h">
@@ -115,6 +127,12 @@
     </ClInclude>
     <ClInclude Include="BigZombie.h">
       <Filter>소스 파일\03. Object\01. AnimationObject\02. Enemies\04. BigZombie</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene.h">
+      <Filter>소스 파일\02. Scene\01. GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene2.h">
+      <Filter>소스 파일\02. Scene\02. GameScene2</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
