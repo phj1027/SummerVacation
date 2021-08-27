@@ -1,5 +1,7 @@
 #include "framework.h"
 #include "Engine.h"
+#include "TitleScene.h"
+#include "ResultScene.h"
 #include "GameScene.h"
 #include "GameScene2.h"
 
@@ -26,8 +28,8 @@ void Engine::Init()
 	icon.loadFromFile("Textures/1.jpg");
 	window->setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
 
-	this->scenes.push(new Scene); // 아무것도 없는 장면 
-	
+	this->scenes.push(new TitleScene(&scenes)); // 아무것도 없는 장면 
+	cout << "TitleScene!!\n";
 	
 }
 
@@ -58,12 +60,12 @@ void Engine::Input()
 		{
 			switch (evt.key.code)
 			{
-			case Keyboard::A: // A 입력받았다면
-			{
-				this->scenes.push(new GameScene2);
-				break;
-			}
-			case Keyboard::S:
+			//case Keyboard::A: // A 입력받았다면
+			//{
+			//	this->scenes.push(new GameScene2);
+			//	break;
+			//}
+			case Keyboard::Space:
 			{
 				this->scenes.push(new GameScene);
 				break;

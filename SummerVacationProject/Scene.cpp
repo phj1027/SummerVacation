@@ -49,4 +49,9 @@ void Scene::Render(RenderWindow* window)
 	{
 		window->draw(*obj);
 	}
+
+	for (auto& txt : mTexts)
+	{
+		window->draw(*txt.second);
+	}
 }

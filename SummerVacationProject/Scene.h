@@ -14,6 +14,8 @@ protected:
 	// 씬에서 오브젝트들을 관리 
 	vector<Object*> vObjects;
 	// ㄴ> 백터와 관련되어있으니까 v붙여준것 
+
+	map<string, Text*> mTexts;
 	stack<Scene*>* scenes;
 	bool quit = false;
 
