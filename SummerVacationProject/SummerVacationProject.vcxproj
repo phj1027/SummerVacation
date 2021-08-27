@@ -151,7 +151,9 @@
     <ClCompile Include="GameScene2.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Object.cpp" />
+    <ClCompile Include="ResultScene.cpp" />
     <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="TitleScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AnimationObject.h" />
@@ -163,7 +165,9 @@
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="GameScene2.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="ResultScene.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="TitleScene.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
