@@ -1,12 +1,13 @@
 #include "framework.h"
 #include "ResultScene.h"
+#include "TitleScene.h"
 
 ResultScene::ResultScene()
 {
 	Init();
 }
 
-ResultScene::ResultScene(stack<Scene*>* scenes) : Scene(scenes)
+ResultScene::ResultScene(stack<Scene*>* scene, RenderWindow* window) : Scene(scenes, window)
 {
 	Init();
 }
@@ -21,6 +22,16 @@ void ResultScene::Init()
 
 
 }
+
+void ResultScene::Input(Event* e)
+{
+
+}
+
+void ResultScene::Destroy()
+{
+}
+
 
 void ResultScene::Update(const float& deltaTime)
 {

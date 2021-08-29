@@ -13,6 +13,8 @@ void Character::Init()
 {
 	Texture* tx = nullptr;
 
+	
+
 	char filePath[150];
 	for (int i = 0; i < 9; ++i)
 	{

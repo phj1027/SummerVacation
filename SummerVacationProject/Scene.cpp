@@ -3,13 +3,12 @@
 #include "Object.h" // vector<Object*> vObjects;의 Object사용하기 위해 
 
 
-
 Scene::Scene()
 {
 	Init();
 }
 
-Scene::Scene(stack<Scene*>* scene) : scenes(scenes)
+Scene::Scene(stack<Scene*>* scene,RenderWindow* window) : scenes(scenes),window(window)
 {
 	Init();
 }
@@ -33,21 +32,41 @@ void Scene::EndScene()
 	quit = true;
 }
 
+void Scene::Input(Event* e)
+{
+
+}
+
 void Scene::Update(const float& deltaTime)
 {
 
+	mousePosition = window->mapPixelToCoords(Mouse::getPosition(*window));
 
-	for (auto& obj : vObjects)
+	for (auto& obj : animationObjects)
 	{
 		obj->Update(deltaTime);
+	}
+
+	for (auto& btn : mButtons)
+	{
+		btn.second->Update(mousePosition);
 	}
 }
 
 void Scene::Render(RenderWindow* window)
 {
-	for (auto& obj : vObjects)
+	for (auto& obj : animationObjects)
 	{
-		window->draw(*obj);
+		if (obj->IsActive() == true)
+		{
+			window->draw(*obj);
+		}
+	
+	}
+
+	for (auto& btn : mButtons)
+	{
+		window->draw(*btn.second);
 	}
 
 	for (auto& txt : mTexts)

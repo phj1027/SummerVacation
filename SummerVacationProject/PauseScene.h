@@ -1,12 +1,12 @@
 #pragma once
 #include "Scene.h"
-class GameScene : public Scene
+class PauseScene : public Scene
 {
 public:
-    GameScene();
-    GameScene(stack<Scene*>* scenes, RenderWindow* window);
-    ~GameScene();
-     
+    PauseScene();
+    PauseScene(stack<Scene*>* scenes, RenderWindow* window);
+   ~PauseScene();
+
 private:
     virtual void Init();
 
@@ -15,6 +15,6 @@ public:
     virtual void Destroy();
     virtual void Update(const float& deltaTime);
     virtual void Render(RenderWindow* window);
-        
+
 };
 

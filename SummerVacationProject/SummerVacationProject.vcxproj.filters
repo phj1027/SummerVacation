@@ -67,14 +67,17 @@
     <Filter Include="소스 파일\02. Scene\02. GameScene">
       <UniqueIdentifier>{3374dae5-d5b2-441b-b47d-d0bd6cae18e7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\02. Scene\03. GameScene2">
-      <UniqueIdentifier>{fb6f613a-2723-4add-9b28-8c7aadddf523}</UniqueIdentifier>
-    </Filter>
     <Filter Include="소스 파일\02. Scene\01. TitleScene">
       <UniqueIdentifier>{1edeeb5f-4cc6-4752-822b-d0b7ce559698}</UniqueIdentifier>
     </Filter>
     <Filter Include="소스 파일\02. Scene\04. ResultScene">
       <UniqueIdentifier>{6e581a33-04bd-446a-8a66-4cef34b93377}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02. Scene\03. PauseScene">
+      <UniqueIdentifier>{fb6f613a-2723-4add-9b28-8c7aadddf523}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03. Object\02. Button">
+      <UniqueIdentifier>{b2b0fdfd-3d1d-46e4-a80e-b3c017e2e103}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -105,14 +108,17 @@
     <ClCompile Include="GameScene.cpp">
       <Filter>소스 파일\02. Scene\02. GameScene</Filter>
     </ClCompile>
-    <ClCompile Include="GameScene2.cpp">
-      <Filter>소스 파일\02. Scene\03. GameScene2</Filter>
+    <ClCompile Include="PauseScene.cpp">
+      <Filter>소스 파일\02. Scene\03. PauseScene</Filter>
     </ClCompile>
     <ClCompile Include="TitleScene.cpp">
       <Filter>소스 파일\02. Scene\01. TitleScene</Filter>
     </ClCompile>
     <ClCompile Include="ResultScene.cpp">
       <Filter>소스 파일\02. Scene\04. ResultScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>소스 파일\03. Object\02. Button</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -143,14 +149,17 @@
     <ClInclude Include="GameScene.h">
       <Filter>소스 파일\02. Scene\02. GameScene</Filter>
     </ClInclude>
-    <ClInclude Include="GameScene2.h">
-      <Filter>소스 파일\02. Scene\03. GameScene2</Filter>
+    <ClInclude Include="PauseScene.h">
+      <Filter>소스 파일\02. Scene\03. PauseScene</Filter>
     </ClInclude>
     <ClInclude Include="TitleScene.h">
       <Filter>소스 파일\02. Scene\01. TitleScene</Filter>
     </ClInclude>
     <ClInclude Include="ResultScene.h">
       <Filter>소스 파일\02. Scene\04. ResultScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>소스 파일\03. Object\02. Button</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

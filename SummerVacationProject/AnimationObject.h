@@ -1,6 +1,6 @@
 ﻿#pragma once
 #include "Object.h"
-class AnimationObject : public Object   // AnimationObject´Â Object¿¡ »ó¼ÓµÊ
+class AnimationObject : public Object   
 {
 public:
 	AnimationObject();

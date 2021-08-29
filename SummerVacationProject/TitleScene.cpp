@@ -1,12 +1,14 @@
 #include "framework.h"
 #include "TitleScene.h"
+#include "GameScene.h"
+#include "PauseScene.h"
 
 TitleScene::TitleScene()
 {
 	Init();
 }
 
-TitleScene::TitleScene(stack<Scene*>* scenes) : Scene(scenes)
+TitleScene::TitleScene(stack<Scene*>* scene, RenderWindow* window) :Scene(scenes,window)
 {
 	Init();
 }
@@ -18,33 +20,51 @@ TitleScene::~TitleScene()
 
 void TitleScene::Init()
 {
-	Font* font = new Font;
-	font->loadFromFile("Font/CookieRun_Bold.ttf");
-	Text* text = new Text("Press \"Space\" Key!!", *font);
-	text->setFillColor(Color::White);
-	text->setOrigin(text->getGlobalBounds().width / 2.f, text->getGlobalBounds().height / 2.f);
-	text->setPosition(Vector2f(500 / 2.f, 450));
-	mTexts["START"] = text;
+//Font* font = new Font;
+//font->loadFromFile("Font/CookieRun_Bold.ttf");
+//Text* text = new Text("Press \"Space\" Key!!", *font);
+//text->setFillColor(Color::White);
+//text->setOrigin(text->getGlobalBounds().width / 2.f, text->getGlobalBounds().height / 2.f);
+//text->setPosition(Vector2f(500 / 2.f, 450));
+//mTexts["START"] = text;
 
+
+
+	mButtons["PLAY"] = new Button("Textures/Button/start.png",
+		"Textures/Button/start.png",
+		Vector2f(500 / 2.f, 400.f));
 	
 }
 
+void TitleScene::Input(Event* e)
+{
+	switch (e->key.code)
+	{
+	case Keyboard::Escape:
+	{
+		scenes->top()->EndScene();
+		break;
+	}
+	case Keyboard::Space:
+	{
+		scenes->push(new GameScene(scenes,window));
+		break;
+	}
+	default:
+		break;
+	}
+}
+
+void TitleScene::Destroy()
+{
+
+}
 void TitleScene::Update(const float& deltaTime)
 {
-	static float elapsedTime = 0.f;
-	static float txtScale = 1.f;
-	static int frame = 0;
-	static int div = 1;
-	if ((elapsedTime += deltaTime) >= 0.02f)
+
+	if (mButtons["PLAY"]->IsPressed())
 	{
-		mTexts["START"]->setScale(Vector2f(txtScale, txtScale));
-		if ((++frame%30) == 0)
-		{
-			div *= -1;
-		}
-		txtScale += (0.01f * div);
-		mTexts["START"]->setScale(Vector2f(txtScale, txtScale));
-		elapsedTime = 0.f;
+		scenes->push(new GameScene(scenes, window));
 	}
 	Scene::Update(deltaTime);
 	
